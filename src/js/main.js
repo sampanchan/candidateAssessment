@@ -13,6 +13,7 @@ let fname = document.getElementById("fname");
 let lname = document.getElementById("lname");
 let email = document.getElementById("email");
 let phone = document.getElementById("phone");
+let checkbox = document.getElementById("checkbox");
 let btn = document.querySelector(".button");
 
 //validation
@@ -34,4 +35,6 @@ email.addEventListener('blur', validation);
 email.addEventListener('keyup', validation);
 phone.addEventListener('blur', validation);
 phone.addEventListener('keyup', validation);
+checkbox.addEventListener('blur', validation);
+checkbox.addEventListener('keyup', validation);
 
