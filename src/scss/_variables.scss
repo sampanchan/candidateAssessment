@@ -1,0 +1,161 @@
+// 0 breakpoints ==================================== 
+// small tablets and large smartphones (landscape view)
+$breakpoint-phone: 576px;
+
+// small tablets (portrait view)
+$breakpoint-tablet: 768px;
+
+// tablets and small desktops
+$breakpoint-desktop: 992px;
+
+//large tabletss and desktops
+$breakpoint-xl: 1200px;
+
+//super large desktops
+$breakpoint-xl: 1600px;
+
+
+// * 1. Colors =======================================
+$white: #ffffff;
+$black: #1d1c1e;
+
+
+
+
+// * 2. Fonts ==========================================
+@font-face {
+    font-family: 'simply_cricketbold';
+    src: url('../fonts/simplycricket-bold.woff2') format('woff2'),
+         url('../fonts/simplycricket-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'simply_cricketbold';
+    src: url('../fonts/simplycricket-bold.woff2') format('woff2'),
+         url('../fonts/simplycricket-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'simply_cricketbook';
+    src: url('../fonts/simplycricket-book.woff2') format('woff2'),
+         url('../fonts/simplycricket-book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'simply_cricketbook';
+    src: url('../fonts/simplycricket-book.woff2') format('woff2'),
+         url('../fonts/simplycricket-book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'simply_cricketdemibold';
+    src: url('../fonts/simplycricket-demibold.woff2') format('woff2'),
+         url('../fonts/simplycricket-demibold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'simply_cricketdemibold';
+    src: url('../fonts/simplycricket-demibold.woff2') format('woff2'),
+         url('../fonts/simplycricket-demibold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'simply_cricketmedium';
+    src: url('../fonts/simplycricket-medium.woff2') format('woff2'),
+         url('../fonts/simplycricket-medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'simply_cricketmedium';
+    src: url('../fonts/simplycricket-medium.woff2') format('woff2'),
+         url('../fonts/simplycricket-medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'simply_cricketmedium';
+    src: url('../fonts/simplycricket-medium.woff2') format('woff2'),
+         url('../fonts/simplycricket-medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'simply_cricketmedium';
+    src: url('../fonts/simplycricket-medium.woff2') format('woff2'),
+         url('../fonts/simplycricket-medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'simply_cricketbold';
+    src: url('../fonts/simplycricket-bold.woff2') format('woff2'),
+         url('../fonts/simplycricket-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+// $main-font: 'Raleway', sans-serif;
+
+
+// * 3. Margin =======================================

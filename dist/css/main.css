@@ -1,0 +1,869 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+/* 0. Reset ================================= */
+/* 
+If you want to add partials, use Sass Modules via @use:
+@use 'variables';
+
+Usage: partial-name.variable/mixin/function-name:
+background: variables.$primary-color;
+*/
+@import url("https://use.typekit.net/vue7izf.css");
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "simply_cricketbold";
+  src: url("../fonts/simplycricket-bold.woff2") format("woff2"), url("../fonts/simplycricket-bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "simply_cricketbold";
+  src: url("../fonts/simplycricket-bold.woff2") format("woff2"), url("../fonts/simplycricket-bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "simply_cricketbook";
+  src: url("../fonts/simplycricket-book.woff2") format("woff2"), url("../fonts/simplycricket-book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "simply_cricketbook";
+  src: url("../fonts/simplycricket-book.woff2") format("woff2"), url("../fonts/simplycricket-book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "simply_cricketdemibold";
+  src: url("../fonts/simplycricket-demibold.woff2") format("woff2"), url("../fonts/simplycricket-demibold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "simply_cricketdemibold";
+  src: url("../fonts/simplycricket-demibold.woff2") format("woff2"), url("../fonts/simplycricket-demibold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "simply_cricketmedium";
+  src: url("../fonts/simplycricket-medium.woff2") format("woff2"), url("../fonts/simplycricket-medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "simply_cricketmedium";
+  src: url("../fonts/simplycricket-medium.woff2") format("woff2"), url("../fonts/simplycricket-medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "simply_cricketmedium";
+  src: url("../fonts/simplycricket-medium.woff2") format("woff2"), url("../fonts/simplycricket-medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "simply_cricketmedium";
+  src: url("../fonts/simplycricket-medium.woff2") format("woff2"), url("../fonts/simplycricket-medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "simply_cricketbold";
+  src: url("../fonts/simplycricket-bold.woff2") format("woff2"), url("../fonts/simplycricket-bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* 1. Main Layout ================================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  font-family: "simply_cricketmedium";
+}
+
+/* 2. Content ================================= */
+.header-container a {
+  text-decoration: none;
+}
+.header-container__list {
+  background-color: #404041;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .header-container__list {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+.header-container__list ol {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .header-container__list ol {
+    padding-bottom: 0.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header-container__list ol img {
+    width: 10%;
+  }
+}
+.header-container__list ol a {
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .header-container__list ol a {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+.header-container__list ol a:hover {
+  color: #60a630;
+  transition: 0.3s ease-in-out;
+}
+.header-container__list ul {
+  display: flex;
+  margin-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  justify-content: space-around;
+}
+.header-container__list ul li {
+  list-style: none;
+}
+@media screen and (min-width: 768px) {
+  .header-container__list ul li {
+    margin-left: 1.5rem;
+  }
+}
+.header-container__list ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: "simply_cricketmedium";
+}
+.header-container__list ul li a:hover {
+  color: #60a630;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (min-width: 768px) {
+  .header-container__list ul li a {
+    font-size: 0.8rem;
+  }
+}
+.header-container .logo-mobile {
+  width: 25%;
+}
+@media screen and (min-width: 768px) {
+  .header-container .logo-mobile {
+    display: none;
+    height: 0;
+  }
+}
+.header-container__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+}
+.header-container__main .logo-desktop {
+  width: 25%;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header-container__main .logo-desktop {
+    width: 60%;
+    display: block;
+  }
+}
+.header-container__main .main-nav {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header-container__main .main-nav {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+.header-container__main .main-nav ul {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .header-container__main .main-nav ul {
+    margin-top: 0;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-right: 1.3rem;
+  }
+}
+.header-container__main .main-nav ul li {
+  list-style: none;
+  margin-left: 2rem;
+  margin-top: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .header-container__main .main-nav ul li {
+    margin-left: 1.3rem;
+    margin-top: 0;
+  }
+}
+.header-container__main .main-nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}
+.header-container__main .main-nav ul li a:hover {
+  color: #60a630;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (min-width: 768px) {
+  .header-container__main .main-nav ul li a {
+    font-size: 1.2rem;
+  }
+}
+body.nav-active .header-container__main .main-nav {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  top: 10%;
+  right: -5%;
+  height: 100vh;
+  width: 50vw;
+  background-color: white;
+}
+.header-container .hamburger {
+  cursor: pointer;
+  z-index: 100;
+}
+@media screen and (min-width: 768px) {
+  .header-container .hamburger {
+    display: none;
+  }
+}
+.header-container .hamburger_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 1rem;
+  margin-top: -1.5rem;
+  padding-bottom: 1rem;
+}
+.header-container .hamburger_container div {
+  background-color: #000000;
+  width: 40px;
+  height: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+  transition: 0.5s;
+}
+.header-container .hamburger_container div:nth-child(2) {
+  width: 28px;
+}
+body.nav-active .header-container .hamburger_container div {
+  background: black;
+  -ms-transform: rotate(45deg) translate(6px);
+      transform: rotate(45deg) translate(6px);
+}
+body.nav-active .header-container .hamburger_container div:nth-child(2) {
+  -ms-transform: rotate(-45deg) translate(8px);
+      transform: rotate(-45deg) translate(8px);
+  width: 40px;
+}
+
+.main-wrapper form {
+  text-align: right;
+}
+.main-wrapper__section-hero {
+  background-color: #60a630;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .main-wrapper__section-hero {
+    flex-direction: row-reverse;
+  }
+}
+.main-wrapper__section-hero sup {
+  font-size: 0.7rem;
+  vertical-align: super;
+}
+.main-wrapper__section-hero h1 {
+  font-size: 3rem;
+  font-family: "simply_cricketbold";
+  font-weight: normal;
+  font-style: normal;
+}
+@media screen and (min-width: 768px) {
+  .main-wrapper__section-hero h1 {
+    font-size: 6rem;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+  }
+}
+.main-wrapper__section-hero h2 {
+  font-size: 2rem;
+  font-family: "simply_cricketbook";
+}
+.main-wrapper__section-hero h3 {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: "simply_cricketbook";
+}
+.main-wrapper__section-hero article .article-description {
+  font-weight: bold;
+  margin: 0px 50px;
+  border: solid white 1px;
+  padding: 1rem;
+  border-left: none;
+  border-right: none;
+  font-family: "simply_cricketmedium";
+}
+@media screen and (min-width: 768px) {
+  .main-wrapper__section-hero article .article-description {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+  }
+}
+.main-wrapper__section-hero article .article-span {
+  font-size: 1.3rem;
+}
+.main-wrapper__section-hero article .article-span p {
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+.main-wrapper__section-hero article .article-span p:nth-of-type(2) {
+  margin-top: 0.3rem;
+  padding-bottom: 1rem;
+}
+.main-wrapper__section-hero article .article-span a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  font-family: "simply_cricketbold";
+}
+.main-wrapper__section-hero article .article-span a:hover {
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+.main-wrapper__section-hero img {
+  width: 100%;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .main-wrapper__section-hero img {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .main-wrapper__section-hero img {
+    width: 50%;
+  }
+}
+.main-wrapper__section-form {
+  font-family: "simply_cricketbook";
+  max-width: 800px;
+  margin: 0 auto;
+}
+.main-wrapper__section-form .main-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.main-wrapper__section-form .main-form .form-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  max-width: 500px;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+.main-wrapper__section-form .main-form .form-inputs input {
+  border-radius: 5px;
+  border: 1px solid #cecece;
+  height: 30px;
+}
+.main-wrapper__section-form .main-form label {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.main-wrapper__section-rules {
+  text-align: center;
+  margin-top: 3rem;
+  border: solid 1px #cecece;
+  border-right: none;
+  border-left: none;
+  max-width: 400px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .main-wrapper__section-rules {
+    max-width: 700px;
+  }
+}
+.main-wrapper__section-rules article {
+  margin-top: 1.5rem;
+  max-width: 300px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .main-wrapper__section-rules article {
+    max-width: 500px;
+  }
+}
+.main-wrapper__section-rules article h4 {
+  color: #60a630;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  font-family: "simply_cricketbold";
+}
+.main-wrapper__section-rules article p {
+  max-height: 150px;
+  max-width: 400px;
+  text-align: left;
+  overflow: auto;
+  padding: 10px;
+  scrollbar-color: #60a630;
+  border: solid 1px #cecece;
+  border-radius: 5px;
+}
+@media screen and (min-width: 768px) {
+  .main-wrapper__section-rules article p {
+    max-height: 100px;
+    max-width: 700px;
+  }
+}
+.main-wrapper .checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1rem;
+  text-align: left;
+  font-size: 1rem;
+}
+.main-wrapper .checkbox:nth-of-type(2) {
+  align-items: flex-start;
+}
+.main-wrapper .checkbox input {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+.main-wrapper .checkbox label a {
+  color: black;
+  cursor: pointer;
+}
+.main-wrapper .checkbox label a:hover {
+  color: #60a630;
+  transition: 0.3s ease-in-out;
+}
+.main-wrapper .checkbox label small {
+  color: #cecece;
+  font-size: 0.7rem;
+}
+.main-wrapper .dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 400px;
+  margin-bottom: 1.5rem;
+}
+.main-wrapper .dropdown label {
+  font-size: 1.3rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.main-wrapper .dropdown select {
+  width: 100%;
+  height: 30px;
+}
+
+.button {
+  background-color: #3170b7;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin: 1.5rem;
+  margin-bottom: 2rem;
+  margin-right: 5rem;
+}
+.button:hover {
+  background-color: black;
+  transition: 0.3s ease-in-out;
+}
+.button[disabled] {
+  opacity: 0.3;
+}
+
+sup {
+  font-size: 0.7rem;
+  vertical-align: super;
+}
+
+.thank-you-wrapper__section-hero {
+  z-index: -1;
+  position: relative;
+  background-image: url("../img/thanksBackground.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin: 0 auto;
+  min-height: 400px;
+}
+@media screen and (min-width: 992px) {
+  .thank-you-wrapper__section-hero {
+    height: 50vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  .thank-you-wrapper__section-hero .section-hero-thank-you {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+}
+.thank-you-wrapper__section-hero .thank-you-content {
+  display: flex;
+  flex-direction: column;
+}
+.thank-you-wrapper__section-hero h1 {
+  font-size: 5rem;
+  font-family: "simply_cricketbold";
+  margin-top: 2rem;
+}
+@media screen and (min-width: 1600px) {
+  .thank-you-wrapper__section-hero h1 {
+    font-size: 7rem;
+  }
+}
+.thank-you-wrapper__section-hero p {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  line-height: 2rem;
+}
+.thank-you-wrapper__section-hero p:nth-of-type(2) {
+  font-size: 1.3rem;
+  font-family: "simply_cricketbook";
+  line-height: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .thank-you-wrapper__section-hero p {
+    font-size: 2rem;
+  }
+}
+.thank-you-wrapper__section-hero .button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+}
+.thank-you-wrapper__section-hero .button-container button {
+  background-color: #3170b7;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin: 1.5rem;
+}
+.thank-you-wrapper__section-hero .button-container button:hover {
+  background-color: black;
+  transition: 0.3s ease-in-out;
+}
+.thank-you-wrapper__banner {
+  height: 55vw;
+  background-image: url("../img/Offer.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@media screen and (min-width: 768px) {
+  .thank-you-wrapper__banner {
+    height: 50vw;
+    background-size: cover;
+  }
+}
+
+.footer {
+  background-color: #404041;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-family: "simply_cricketbook";
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+.footer__p {
+  max-width: 500px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .footer__p {
+    text-align: left;
+  }
+}
+.footer__ul {
+  margin-top: 2rem;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .footer__ul {
+    margin-top: 0;
+  }
+}
+.footer__ul li {
+  margin-top: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__ul li {
+    text-align: left;
+  }
+}
+.footer__ul li a {
+  font-size: 0.9rem;
+  color: white;
+}
+.footer__ul li a:hover {
+  color: #60a630;
+  transition: 0.3s ease-in-out;
+}
+.footer__div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__div {
+    margin-top: 1rem;
+    align-items: flex-start;
+  }
+}
+.footer__div h5 {
+  font-size: 1.4rem;
+  font-family: "simply_cricketmedium";
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__div h5 {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__div div {
+    display: flex;
+    align-items: center;
+  }
+}
+.footer__div div span {
+  margin-top: 0.5rem;
+  font-family: "simply_cricketmedium";
+}
+.footer__div div ul {
+  display: flex;
+  margin: 0.5rem;
+}
+.footer__div div ul li {
+  margin: 0.5rem;
+}
+.footer__div div ul li a img {
+  width: 75%;
+}
+/*# sourceMappingURL=main.css.map */

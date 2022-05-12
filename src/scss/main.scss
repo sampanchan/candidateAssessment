@@ -1,0 +1,695 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+
+/* 0. Reset ================================= */
+
+/* 
+If you want to add partials, use Sass Modules via @use:
+@use 'variables';
+
+Usage: partial-name.variable/mixin/function-name:
+background: variables.$primary-color;
+*/
+
+@use 'reset';
+@use 'variables';
+@use 'mixins';
+@import url("https://use.typekit.net/vue7izf.css");
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: white;
+	font-family: 'simply_cricketmedium';
+}
+
+/* 2. Content ================================= */
+
+//========== header 
+.header-container{
+	a{
+		text-decoration: none;
+	}
+	&__list{
+		background-color: #404041;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
+		@include mixins.bp-medium{
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-around;
+		} 
+		
+
+		ol{
+			color:white;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-evenly;
+			padding-top:.5rem;
+			@include mixins.bp-medium{
+				padding-bottom:.5rem;
+				
+			}
+			img{
+				@include mixins.bp-medium{
+					width: 10%;	
+				}
+			}
+			
+			a{
+				cursor:pointer;
+				@include mixins.bp-medium{
+					margin-left:.5rem;
+					font-size: .8rem;
+					
+				}
+				&:hover{
+					color:#60a630;
+					transition: .3s ease-in-out;
+				}
+			}
+		}
+		ul{
+			display: flex;
+			margin-top:.5rem;
+			padding-bottom:.5rem;
+			justify-content: space-around;
+			
+			
+			li{
+				list-style: none;
+				@include mixins.bp-medium{
+					margin-left: 1.5rem;	
+				}
+	
+				a{
+					text-decoration: none;
+					color: white;
+					font-size: 1rem;
+					cursor:pointer;
+					font-family: 'simply_cricketmedium';
+					&:hover{
+						color:#60a630;
+						transition: .3s ease-in-out;
+					}
+					@include mixins.bp-medium{
+						font-size: .8rem;	
+					}
+				}
+			}
+		}
+	}
+	.logo-mobile{
+		width:25%;
+		@include mixins.bp-medium{
+			display: none;
+			height: 0;	
+		}
+	}
+	&__main{
+		display: flex;
+		flex-direction: column;
+    	justify-content: space-evenly;
+    	align-items: stretch;
+		flex-wrap: wrap;
+		padding-bottom: 1rem;
+		@include mixins.bp-medium{
+		
+		
+		}
+		.logo-desktop{
+			width:25%;
+			display: none;
+			@include mixins.bp-medium{
+				width:60%;
+				display: block;	
+			}
+		}
+		
+		.main-nav{
+			display: none;
+			@include mixins.bp-medium{
+				display: block;
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+			}
+			
+			ul{
+				
+				display: flex;
+				flex-direction: column;
+				@include mixins.bp-medium{
+					margin-top: 0;
+					flex-direction: row;
+					justify-content: space-evenly;
+					margin-right: 1.3rem;
+				}
+				li{
+					list-style: none;
+					margin-left: 2rem;
+					margin-top: 3rem;
+					// margin-left: 2rem;
+					@include mixins.bp-medium{
+						margin-left: 1.3rem;
+						margin-top: 0;
+					}
+		
+					a{
+						text-decoration: none;
+						color: black;
+						font-size: 1rem;
+						&:hover{
+							color:#60a630;
+							transition: .3s ease-in-out;
+						}
+						@include mixins.bp-medium{
+							font-size: 1.2rem;
+							
+						}
+					}
+				}
+			}
+			body.nav-active & {
+				display: block;
+				position: absolute;
+				overflow: hidden;
+				// z-index: 1;
+				top: 10%;
+				right:-5%;
+				height: 100vh;
+				width: 50vw;
+				background-color: white;
+			}
+		}
+		
+	}
+	.hamburger{
+		cursor: pointer;
+		z-index: 100;
+		@include mixins.bp-medium{
+			display: none;
+		}
+
+		&_container{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		margin-right: 1rem;
+		margin-top: -1.5rem;
+		padding-bottom: 1rem;
+		
+		
+		// margin-top: 3rem;
+		div{
+			background-color:#000000;
+			width:40px;
+			height:5px;
+			border-radius: 5px;
+			margin-top: 5px;
+			transition: .5s;
+			&:nth-child(2){
+				width:28px;
+				}
+				body.nav-active & {
+					background: black; 
+					transform: rotate(45deg) translate(6px);
+					
+					&:nth-child(2){
+						transform: rotate(-45deg) translate(8px);
+						width:40px;
+					}
+				}
+			}
+
+			
+		}
+		
+		
+		
+	}
+}
+
+//========== main 
+.main-wrapper{
+	form{
+		text-align: right;
+	}
+	&__section-hero{
+		background-color: #60a630;
+		width:100%;
+		height:100%;
+		color:white;
+		text-align: center;
+		padding-top: 2rem;
+		display: flex;
+		flex-direction: column;
+		@include mixins.bp-medium{
+			flex-direction: row-reverse;	
+		}
+		sup{
+			font-size:.7rem ;
+			vertical-align: super;
+		}
+		h1{
+			font-size: 3rem;
+			// font????
+			font-family: 'simply_cricketbold';
+			font-weight:normal;
+			font-style:normal;
+			@include mixins.bp-medium{
+				font-size: 6rem;
+				margin-bottom: 2rem;
+				margin-top: .5rem;	
+			}
+				
+		}
+		h2{
+			font-size:2rem ;
+			font-family: 'simply_cricketbook';
+		}
+		h3{
+			font-size: 1.3rem;
+			margin-top: .5rem;
+			margin-bottom: 1rem;
+			font-family: 'simply_cricketbook';
+		}
+		article{	
+			
+			.article-description{
+				font-weight: bold;
+				margin: 0px 50px;
+				border: solid white 1px;
+				padding: 1rem;
+				border-left:none;
+				border-right:none;
+				font-family: 'simply_cricketmedium';
+				@include mixins.bp-medium{
+					font-size: 1.5rem;
+					margin-bottom: 2rem;
+					margin-top: .5rem;	
+				}
+			}
+			.article-span{
+				font-size: 1.3rem;
+				
+				
+				
+				p{
+					margin-top: 1rem;
+					margin-bottom: .3rem;
+					&:nth-of-type(2){
+						margin-top: .3rem;
+						padding-bottom: 1rem;
+					}
+				}
+				a{
+					text-decoration: none;
+					color: black;
+					cursor: pointer;
+					font-family: 'simply_cricketbold';
+					&:hover{
+						color:white;
+						transition: .3s ease-in-out;
+					}
+					
+				}
+			}	
+		}
+		img{
+			width:100%;
+			text-align: center;
+			@include mixins.bp-medium{
+				width: 50%;		
+			}
+			@include mixins.bp-large{
+				width: 50%;		
+			}
+		}
+	}
+	&__section-form{
+		font-family: 'simply_cricketbook';
+		max-width: 800px;
+    	margin: 0 auto;
+		.main-form{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 3rem;
+			margin-bottom: 3rem;
+			.form-inputs{
+				display: flex;
+				flex-direction: column;
+				width: 75%;
+				max-width: 500px;
+				text-align: left;
+				margin-bottom: .5rem;
+				
+				input{
+					border-radius: 5px;
+					border: 1px solid #cecece;
+					height: 30px;
+					// max-width: 500px;
+				}
+			}
+			label{
+				font-size: 1.3rem;
+				margin-bottom: .5rem;
+			}
+		}
+
+	}
+	&__section-rules{
+		text-align: center;
+		margin-top: 3rem;
+		border: solid 1px #cecece;
+		border-right:none;
+		border-left:none;
+		max-width: 400px;
+		margin: 0 auto;
+		@include mixins.bp-medium{
+			max-width: 700px;		
+		}
+		
+		article{
+			margin-top: 1.5rem;
+			max-width: 300px;
+			margin: 0 auto;
+			@include mixins.bp-medium{
+				max-width: 500px;		
+			}
+			h4{
+				color: #60a630;
+				font-weight:bold;
+				font-size: 1.5rem;
+				margin-top: 1.5rem;
+				margin-bottom: 1.5rem;
+				text-align: left;
+				font-family: 'simply_cricketbold';
+			}
+			p{
+				max-height:150px;
+				max-width:400px;
+				text-align: left;	
+				overflow: auto;
+				padding:10px;
+				scrollbar-color: #60a630;
+				border: solid 1px #cecece;
+				border-radius: 5px;
+				@include mixins.bp-medium{
+					max-height:100px;
+					max-width:700px;		
+				}
+			}
+		}
+	}
+	.checkbox{
+		display: flex;
+		flex-direction: row;
+		align-items:center;
+		margin-top: 1rem;
+		text-align: left;
+		font-size: 1rem;
+		&:nth-of-type(2){
+			align-items: flex-start;
+		}
+		input{
+			width: 20px;
+			height:20px;
+			margin-right: 1rem;
+			flex-shrink: 0;
+			
+		}
+		label{
+			a{
+				color: black;
+				cursor: pointer;
+				&:hover{
+					color:#60a630;
+					transition: .3s ease-in-out;
+				}
+
+			}
+			small{
+				color:#cecece;
+				font-size: .7rem;
+			}
+		}
+	}
+	.dropdown{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		max-width: 400px;
+		margin-bottom: 1.5rem;
+		label{
+			font-size: 1.3rem;
+			margin-top: 3rem;
+			margin-bottom: 1rem;
+		}
+		select{
+			width: 100%;
+			height: 30px;
+			
+		}
+
+	}
+	
+}
+
+//========== submit button
+.button{
+	background-color:#3170b7;
+	border:none;
+	border-radius: 5px;
+	padding: 10px 15px;
+	color: white;
+	font-size: 1.1rem;
+	cursor:pointer;
+	margin: 1.5rem;
+	margin-bottom: 2rem;
+	margin-right: 5rem;
+	
+				
+	&:hover{
+		background-color:black;
+		transition: .3s ease-in-out;
+	}
+	&[disabled]{
+		opacity:.3;
+	}
+}
+
+//========== thank you/ submit 
+sup{
+	font-size:.7rem ;
+	vertical-align: super;
+}
+.thank-you-wrapper{
+	
+	&__section-hero{
+		z-index:-1;
+		position: relative;
+		background-image: url("../img/thanksBackground.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		color: white;
+		margin:0 auto;
+		min-height: 400px;
+		
+		@include mixins.bp-large{
+			height: 50vw;
+		}
+		
+		.section-hero-thank-you{
+			@include mixins.bp-large{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			
+		}
+		.thank-you-content{
+			display: flex;
+			flex-direction: column;
+			
+		}
+		h1{
+			font-size: 5rem;
+			font-family: 'simply_cricketbold';
+			margin-top: 2rem;
+			@include mixins.bp-xl{
+				font-size: 7rem;
+			}
+		}
+		p{
+			font-size: 1.5rem;
+			margin-top: 2rem;
+			line-height: 2rem;
+			
+			&:nth-of-type(2){
+				font-size: 1.3rem;
+				font-family: 'simply_cricketbook';
+				line-height: 2rem;
+			}
+			@include mixins.bp-medium{
+				font-size: 2rem;
+			}
+		}
+		.button-container{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			margin-top: 3rem;
+			padding-bottom: 2rem;
+			
+			
+			button{
+				background-color:#3170b7;
+				border:none;
+				border-radius: 5px;
+				padding: 10px 15px;
+				color: white;
+				font-size: 1.1rem;
+				cursor:pointer;
+				margin: 1.5rem;
+				
+				&:hover{
+					background-color:black;
+					transition: .3s ease-in-out;
+				}
+			}
+
+		}
+	}
+	&__banner{
+		height: 55vw;
+		background-image: url("../img/Offer.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		@include mixins.bp-medium{
+			height: 50vw;
+			background-size: cover;
+		}
+	}
+}
+
+
+//========== footer
+.footer{
+	background-color:#404041;
+	color:white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem;
+	font-family: 'simply_cricketbook';
+	@include mixins.bp-medium{
+		flex-direction: row;
+		align-items: center;
+		justify-content:space-around;		
+	}
+	&__p{
+		max-width: 500px;
+		font-size: .8rem;
+		text-align: center;
+		@include mixins.bp-medium{
+			text-align: left;			
+		}
+	}
+	&__ul{
+		margin-top: 2rem;
+		text-align: center;
+		@include mixins.bp-medium{
+			margin-top:0;			
+		}
+		li{
+			margin-top: .5rem;
+			@include mixins.bp-medium{
+				text-align: left;			
+			}
+			a{
+				font-size: .9rem;
+				color: white;
+				&:hover{
+					color:#60a630;
+					transition: .3s ease-in-out;
+				}
+			}
+		}
+	}
+	&__div{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 2rem;
+		@include mixins.bp-medium{
+			margin-top:1rem;
+			align-items: flex-start;			
+		}
+
+			h5{
+				font-size: 1.4rem;
+				font-family: 'simply_cricketmedium';
+				margin-bottom: 1rem;
+				@include mixins.bp-medium{
+					margin-bottom: 0;			
+				}
+				
+			}
+			div{
+				@include mixins.bp-medium{
+					display: flex;
+					align-items: center;			
+				}
+				
+				span{
+					margin-top: .5rem;
+					font-family: 'simply_cricketmedium';
+				}
+				ul{
+					display: flex;
+					margin: .5rem;
+					li{
+						margin: .5rem;
+						a{
+							img{
+								width:75%;
+							}
+						}
+					}
+				}
+			}
+			
+		
+	}
+}
+
+
